@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>New Queen Tailor</title>
+  <link rel="icon" type="image/png" href="images\logo\logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <style>
+    @keyframes marquee {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .animate-marquee {
+      animation: marquee 30s linear infinite;
+      font-size: 1.75rem;
+      line-height: 2.25rem;
+      color: #3B0764;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+  <!-- 🔝 Navigation Bar -->
+  <nav class="flex items-center justify-between px-6 py-4 shadow-md bg-white relative z-50">
+    <!-- Logo and Brand Name -->
+    <div class="flex items-center space-x-3">
+      <img src="images\logo\logo without bg.png" alt="New Queen Tailor Logo" class="h-20 w-auto" />
+      <span class="text-2xl font-extrabold text-[#9D8140] tracking-wide">NEW QUEEN TAILOR</span>
+    </div>
+
+    <!-- Navigation Menu -->
+    <ul class="hidden md:flex space-x-6 font-semibold text-sm text-purple-900">
+      <li><a href="#">WOMEN</a></li>
+      <li><a href="#">MEN</a></li>
+      <li><a href="#">EMBROIDERY</a></li>
+      <li><a href="#">ORDER & STITCH</a></li>
+      <li><a href="#">PREMIUM</a></li>
+      <li><a href="#">ABOUT</a></li>
+
+      <!-- CONTACT with dropdown (TPT only) -->
+      <li class="relative group">
+        <a href="#" class="hover:text-pink-600">CONTACT</a>
+        <div class="absolute right-0 top-full mt-2 hidden group-hover:flex bg-white shadow-lg p-6 w-[700px] rounded-lg z-50 space-x-6 text-sm text-gray-800">
+          <div>
+            <h4 class="font-bold mb-2">Contact Us</h4>
+            <p><strong>Call:</strong> +91 6381568585</p>
+            <p><strong>WhatsApp:</strong> +91 9486639475</p>
+            <a href="#" class="text-purple-600 block mt-2 hover:underline">Email us</a>
+          </div>
+          <div>
+            <h4 class="font-bold mb-2">Tirupathur Store</h4>
+            <p>11, Arasamara Street,</p>
+            <p>Sivanar Street, Tirupathur – 635601</p>
+            <p><em>(Opp. Kesavalu Reddy Complex)</em></p>
+          </div>
+          <div>
+            <h4 class="font-bold mb-2">Visit Us</h4>
+            <img src="images\logo\tailor_app_banner.svg" class="w-32 h-24 object-cover rounded" />
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Icons -->
+    <div class="flex items-center space-x-4 text-purple-900">
+      <!-- Search -->
+      <button title="Search" class="hover:text-pink-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M11 5a6 6 0 106 6 6 6 0 00-6-6zm0 0v0m4.293 9.707L21 21" />
+        </svg>
+      </button>
+
+<a href="login.php" class="px-5 py-2 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-700 transition duration-200 shadow-md">
+    Sign In
+</a>
+      <!-- Cart -->
+      <button title="Cart" class="hover:text-pink-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.293 4.293a1 1 0 00.217.707l.543.543a1 1 0 00.707.217L9 18h6l1.293-1.293a1 1 0 00.217-.707L17 13M17 13H7" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <!-- ✅ Image Slider Banner -->
+<div x-data="{ 
+  activeSlide: 0, 
+  slides: [
+    'images/sliders/Home_page_banner_blouse_aa3935d371_PhotoGrid.png',
+    'images/sliders/Home_page_banner_wedding_5dd14e214c_PhotoGrid.png',
+    'images/sliders/saree_f381a52f47_PhotoGrid.png',
+    'images/sliders/tailor-tailoring-stylish-mens-suit-260nw-2470779475_PhotoGrid.png'
+  ] 
+}" 
+x-init="setInterval(() => activeSlide = (activeSlide + 1) % slides.length, 3000)"
+class="w-full h-[260px] relative overflow-hidden">
+
+  <!-- Slides -->
+  <template x-for="(slide, index) in slides" :key="index">
+    <img :src="slide"
+         :class="activeSlide === index ? 'opacity-100 z-10' : 'opacity-0 z-0'"
+         class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000">
+  </template>
+</div>
+<!-- How Can We Help Section -->
+<section class="w-full px-2 py-8">
+  <h2 class="text-2xl font-bold text-center mb-6 text-purple-900">How can we help you today?</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+    <!-- Book Appointment -->
+    <a href="appointment.html" class="block rounded-xl overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105 bg-gray-50 p-4">
+      <img src="images/clickable guesters/Book_Appointment1.webp" alt="Book Appointment"
+           class="rounded mb-3 w-full object-contain" />
+      <h3 class="text-lg font-bold text-purple-900">Book Appointment</h3>
+      <p class="text-sm text-gray-700">Personalize Your Style</p>
+      <p class="text-yellow-600 text-sm mt-1">Free Fashion Designer Consultation →</p>
+    </a>
+
+    <!-- Find Stores -->
+    <a href="store.html" class="block rounded-xl overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105 bg-yellow-50 p-4">
+      <img src="images/clickable guesters/Find_Stores1.webp" alt="Find Stores"
+           class="rounded mb-3 w-full object-contain" />
+      <h3 class="text-lg font-bold text-purple-900">Find Stores</h3>
+      <p class="text-sm text-gray-700">Shop Nearby</p>
+      <p class="text-yellow-600 text-sm mt-1">Find Nearby Stores →</p>
+    </a>
+
+    <!-- Tailoring Services -->
+    <a href="tailoring.html" class="block rounded-xl overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105 bg-gray-50 p-4">
+      <img src="images/clickable guesters/Tailoring_Services1.webp" alt="Tailoring Services"
+           class="rounded mb-3 w-full object-contain" />
+      <h3 class="text-lg font-bold text-purple-900">Tailoring Services</h3>
+      <p class="text-sm text-gray-700">Perfectly Fitted</p>
+      <p class="text-yellow-600 text-sm mt-1">Tailoring Services →</p>
+    </a>
+
+    <!-- Order From Any Site -->
+    <a href="order-and-stitch.html" class="block rounded-xl overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105 bg-red-50 p-4">
+      <img src="images/clickable guesters/online shopping.jpg" alt="Order from Site"
+           class="rounded mb-3 w-full object-contain" />
+      <h3 class="text-lg font-bold text-purple-900">Order From Any Site</h3>
+      <p class="text-sm text-gray-700">We'll stitch what you shop!</p>
+      <p class="text-yellow-600 text-sm mt-1">Order & Stitch Now →</p>
+    </a>
+
+  </div>
+</section>
+ <!-- Stats Marquee -->
+  <section class="relative overflow-hidden bg-[#cbbb83] py-8 shadow-2xl">
+    <div class="w-full whitespace-nowrap">
+      <div class="flex animate-marquee w-max space-x-36 font-extrabold text-[#38264a] text-sm md:text-base px-8">
+        <div class="flex items-center space-x-36">
+          <span>Over 2 Lakh+ Happy Customers</span>
+          <span>50,000+ Garments Tailored to Perfection</span>
+          <span>25 Years of Trusted Experience</span>
+          <span>Standardised Tailoring Quality</span>
+          <span>1–2 Day Express Delivery Service</span>
+        </div>
+        <div class="flex items-center space-x-36">
+          <span>Over 2 Lakh+ Happy Customers</span>
+          <span>50,000+ Garments Tailored to Perfection</span>
+          <span>25 Years of Trusted Experience</span>
+          <span>Standardised Tailoring Quality</span>
+          <span>1–2 Day Express Delivery Service</span>
+        </div>
+      </div>
+    </div>
+  </section>
+<h2 class="text-center text-xl font-bold text-purple-900 mb-4">
+  Find Us on Google Maps
+</h2>
+<!-- Google Maps Section -->
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-center text-purple-900 mb-8">Find Us on Google Maps</h2>
+    <a href="https://maps.app.goo.gl/EmY3vthhU8qi8NhQ9" target="_blank" rel="noopener noreferrer" class="block max-w-4xl mx-auto">
+      <img src="images/location.webp" alt="Find Us on Google Maps" class="w-full rounded-lg shadow-lg hover:shadow-xl transition">
+    </a>
+  </section>
+<!-- Women's Collection Section - Full Width -->
+<section class="py-12 bg-white">
+  <div class="w-full">
+    <div class="text-center mb-10 px-4">
+      <h2 class="text-3xl font-bold text-purple-900">Women's Essential Collections</h2>
+      <p class="text-2xl font-bold text-amber-700 mt-2">EXPLORE OUR PREMIUM TAILORING FOR WOMEN</p>
+    </div>
+
+    <div class="relative w-full">
+      <!-- Full Width Scrollable Container -->
+      <div class="flex overflow-x-auto pb-6 scrollbar-hide pl-4" x-data="{ scrollPos: 0 }" x-ref="scrollContainer" 
+           @scroll.debounce="scrollPos = $refs.scrollContainer.scrollLeft">
+        <!-- Category Cards - Full Width Scrolling -->
+        <div class="flex space-x-6 pr-4">
+          <!-- Blouse -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images/categories/blouse.jpg" alt="Blouse Designs" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Blouse</h3>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Kurti -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images\categories\Kurta-kurti.jpg" alt="Kurti Designs" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Kurti</h3>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Salwar Kameez -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images\categories\Salwar-suit.jpg" alt="Salwar Kameez Designs" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Salwar Kameez</h3>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Lehenga -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images/categories/lehenga.jpg" alt="Lehenga Designs" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Lehenga</h3>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Dress -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images/categories/dress.jpg" alt="Dress Designs" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Dress</h3>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Ready To Wear Saree -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images\categories\Ready-to-wear-Saree.jpg" alt="Ready To Wear Saree" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Ready To Wear Saree</h3>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Shirt -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images/categories/shirt.jpg" alt="Shirt Designs" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Shirt</h3>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Jumpsuit -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images/categories/jumpsuit.jpg" alt="Jumpsuit Designs" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Jumpsuit</h3>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Jacket -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images/categories/jacket.jpg" alt="Jacket Designs" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Jacket</h3>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Top -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images/categories/top.jpg" alt="Top Designs" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Top</h3>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Skirt -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images/categories/skirt.jpg" alt="Skirt Designs" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Skirt</h3>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Trousers -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images\categories\Trouser.jpg" alt="Trousers Designs" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Trousers</h3>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Men's Collection Section - Full Width -->
+<section class="py-12 bg-white">
+  <div class="w-full">
+    <div class="text-center mb-10 px-4">
+      <h2 class="text-3xl font-bold text-purple-900">Men's Essential Collections</h2>
+      <p class="text-2xl font-bold text-amber-700 mt-2">EXPLORE OUR PREMIUM TAILORING FOR MEN</p>
+    </div>
+
+    <div class="relative w-full">
+      <!-- Full Width Scrollable Container -->
+      <div class="flex overflow-x-auto pb-6 scrollbar-hide pl-4" x-data="{ scrollPos: 0 }" x-ref="scrollContainer" 
+           @scroll.debounce="scrollPos = $refs.scrollContainer.scrollLeft">
+        <!-- Category Cards - Full Width Scrolling -->
+        <div class="flex space-x-6 pr-4">
+          <!-- Formal Shirt -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images\categories for boys\formal.webp" alt="Formal Shirt Designs" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Formal Shirt Designs</h3>
+              <h4>Formal Shirt</h4>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Casual Shirt -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images\categories for boys\casual.jpg" alt="Casual Shirt Designs" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Casual Shirt Designs</h3>
+              <h4>Casual Shirt</h4>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Kurta -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images\categories for boys\kurta.webp" alt="Kurta Designs" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Kurta Designs</h3>
+              <h4>Kurta</h4>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Sherwani -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images\categories for boys\sherwani.avif" alt="Sherwani Designs" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Sherwani Designs</h3>
+              <h4>Sherwani</h4>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Blazer -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images\categories for boys\blazer.webp" alt="Blazer Designs" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Blazer Designs</h3>
+              <h4>Blazer</h4>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Waistcoat -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images\categories for boys\Waistcoat.jpg" alt="Waistcoat Designs" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Waistcoat Designs</h3>
+              <h4>Waistcoat</h4>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Indo-Western -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images\categories for boys\indo western.avif" alt="Indo-Western Designs" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Indo-Western Designs</h3>
+              <h4>Indo-Western</h4>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Embroidered Dresses Collection - Full Width -->
+<section class="py-12 bg-white">
+  <div class="w-full">
+    <div class="text-center mb-10 px-4">
+      <h2 class="text-3xl font-bold text-purple-900">Embroidered Dresses Collection</h2>
+      <p class="text-2xl font-bold text-amber-700 mt-2">HANDCRAFTED EMBROIDERY ON PREMIUM GARMENTS</p>
+    </div>
+
+    <div class="relative w-full">
+      <!-- Full Width Scrollable Container -->
+      <div class="flex overflow-x-auto pb-6 scrollbar-hide pl-4" x-data="{ scrollPos: 0 }" x-ref="scrollContainer" 
+           @scroll.debounce="scrollPos = $refs.scrollContainer.scrollLeft">
+        <!-- Category Cards - Full Width Scrolling -->
+        <div class="flex space-x-6 pr-4">
+          <!-- Embroidered Lehenga -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images\EMBROIDARY\EmbroideredLehenga.webp" alt="Embroidered Lehenga" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Embroidered Lehenga</h3>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Embroidered Saree Blouse -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images\EMBROIDARY\embroideryblouse.webp" alt="Embroidered Saree Blouse" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Embroidered Blouse</h3>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Embroidered Anarkali -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images\EMBROIDARY\Embroidered Anarkali.jpg" alt="Embroidered Anarkali" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Embroidered Anarkali</h3>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Embroidered Gown -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images\EMBROIDARY\Embroidered Gown.webp" alt="Embroidered Gown" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Embroidered Gown</h3>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Embroidered Kurti -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images\EMBROIDARY\Embroidered Kurti.avif" alt="Embroidered Kurti" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Embroidered Kurti</h3>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Embroidered Jacket -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images\EMBROIDARY\Embroidered Jacket.jpg" alt="Embroidered Jacket" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Embroidered Jacket</h3>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+
+          <!-- Embroidered Sharara -->
+          <div class="category-card">
+            <div class="category-img-container">
+              <img src="images\EMBROIDARY\Embroidered Sharara.jpg" alt="Embroidered Sharara" class="category-img">
+            </div>
+            <div class="category-info">
+              <h3>Embroidered Sharara</h3>
+              <p>Explore Designs →</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Full Width Category Card Styles */
+  .category-card {
+    flex: 0 0 220px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin: 0 2px; /* Minimal side margin */
+  }
+  
+  .category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  }
+  
+  .category-img-container {
+    height: 280px;
+    overflow: hidden;
+  }
+  
+  .category-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .category-card:hover .category-img {
+    transform: scale(1.05);
+  }
+  
+  .category-info {
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .category-info h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #3B0764;
+    margin-bottom: 4px;
+  }
+  
+  .category-info h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #3B0764;
+    margin-bottom: 4px;
+  }
+  
+  .category-info p {
+    color: #9D8140;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  /* Hide scrollbar but allow scrolling */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  // Initialize Alpine.js
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('scrollPosition', () => ({
+      scrollPos: 0
+    }));
+  });
+</script>
+<body class="bg-gray-50">
+    <!-- Header Section -->
+    <header class="bg-purple-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold">Create Your Custom Design</h1>
+            <p class="mt-3 text-lg md:text-xl">Send us your design and get a quote via WhatsApp</p>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
+            <!-- Process Steps -->
+            <div class="bg-amber-100 p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-purple-900 mb-6">How It Works</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="bg-purple-900 text-white rounded-full w-14 h-14 flex items-center justify-center mb-4 text-xl font-bold">1</div>
+                        <h3 class="font-semibold text-lg">Share Your Design</h3>
+                        <p class="text-gray-700 mt-2">Send images/sketches via WhatsApp</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div class="bg-purple-900 text-white rounded-full w-14 h-14 flex items-center justify-center mb-4 text-xl font-bold">2</div>
+                        <h3 class="font-semibold text-lg">Get Estimate</h3>
+                        <p class="text-gray-700 mt-2">We'll review and send a quote within 24 hours</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div class="bg-purple-900 text-white rounded-full w-14 h-14 flex items-center justify-center mb-4 text-xl font-bold">3</div>
+                        <h3 class="font-semibold text-lg">Confirm & Create</h3>
+                        <p class="text-gray-700 mt-2">Make payment and we'll start crafting</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design Submission Form -->
+            <div class="p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-purple-900 mb-6">Submit Your Design Details</h2>
+                
+                <form id="designForm" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name*</label>
+                            <input type="text" id="name" name="name" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">WhatsApp Number*</label>
+                            <input type="tel" id="phone" name="phone" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+                                   placeholder="e.g. 9486639475">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="designType" class="block text-gray-700 font-medium mb-2">Type of Garment*</label>
+                        <select id="designType" name="designType" required 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition">
+                            <option value="">Select garment type</option>
+                            <option value="Blouse">Blouse</option>
+                            <option value="Lehenga">Lehenga</option>
+                            <option value="Saree">Saree</option>
+                            <option value="Anarkali">Anarkali</option>
+                            <option value="Kurti">Kurti</option>
+                            <option value="Gown">Gown</option>
+                            <option value="Salwar Kameez">Salwar Kameez</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="designDescription" class="block text-gray-700 font-medium mb-2">Design Description*</label>
+                        <textarea id="designDescription" name="designDescription" rows="5" required 
+                                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+                                  placeholder="Describe your design including:\n- Fabric preferences\n- Colors\n- Embroidery style\n- Any special requirements"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Design Images</label>
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+                            <p class="text-yellow-800 font-medium flex items-center">
+                                <i class="fas fa-exclamation-circle mr-2"></i>
+                                IMPORTANT: Please send all images via WhatsApp to +91 9486639475
+                            </p>
+                            <p class="text-yellow-700 text-sm mt-1">After submitting this form, you'll be redirected to WhatsApp to share your images</p>
+                        </div>
+                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center file-upload transition cursor-pointer bg-gray-50">
+                            <i class="fas fa-cloud-upload-alt text-4xl text-purple-500 mb-3"></i>
+                            <p class="text-gray-600 mb-2">You can prepare images to send via WhatsApp</p>
+                            <input type="file" id="designFiles" name="designFiles" accept="image/*,.pdf" multiple class="hidden">
+                            <label for="designFiles" class="inline-block bg-purple-100 text-purple-900 px-6 py-2 rounded-lg cursor-pointer hover:bg-purple-200 transition font-medium">
+                                <i class="fas fa-folder-open mr-2"></i>Select Files
+                            </label>
+                            <p class="text-sm text-gray-500 mt-3">Note: These files won't be uploaded - you'll send them via WhatsApp</p>
+                        </div>
+                        <div id="fileList" class="mt-3 space-y-2"></div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="button" onclick="submitDesign()" 
+                                class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-lg transition duration-300 flex items-center justify-center whatsapp-btn">
+                            <i class="fab fa-whatsapp text-2xl mr-3"></i> Continue to WhatsApp to Send Images
+                        </button>
+                        <p class="text-sm text-gray-600 mt-2 text-center">You'll need to send images separately via WhatsApp after submitting this form</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="max-w-4xl mx-auto mt-12 bg-white rounded-lg shadow-xl overflow-hidden">
+            <div class="p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-purple-900 mb-6">Frequently Asked Questions</h2>
+                
+                <div class="space-y-5">
+                    <div class="border-b border-gray-200 pb-5">
+                        <h3 class="font-semibold text-lg flex items-center">
+                            <i class="fas fa-question-circle text-purple-600 mr-3"></i>
+                            How do I send my design images?
+                        </h3>
+                        <p class="text-gray-700 mt-2 ml-8">After submitting the form, you'll be redirected to WhatsApp where you can send all your design images directly to us at +91 9486639475.</p>
+                    </div>
+                    <div class="border-b border-gray-200 pb-5">
+                        <h3 class="font-semibold text-lg flex items-center">
+                            <i class="fas fa-question-circle text-purple-600 mr-3"></i>
+                            What information should I include?
+                        </h3>
+                        <p class="text-gray-700 mt-2 ml-8">Please provide garment type, fabric preference, colors, embroidery details, measurements, and any reference images via WhatsApp.</p>
+                    </div>
+                    <div class="border-b border-gray-200 pb-5">
+                        <h3 class="font-semibold text-lg flex items-center">
+                            <i class="fas fa-question-circle text-purple-600 mr-3"></i>
+                            Can I modify my design after submission?
+                        </h3>
+                        <p class="text-gray-700 mt-2 ml-8">Yes, we can discuss modifications during the estimation process before final confirmation.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg flex items-center">
+                            <i class="fas fa-question-circle text-purple-600 mr-3"></i>
+                            What's the typical turnaround time?
+                        </h3>
+                        <p class="text-gray-700 mt-2 ml-8">Production time varies (2-4 weeks) depending on design complexity and current workload. Rush orders may be available with additional charges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+   <div class="fixed bottom-6 right-6 z-50">
+    <a href="https://wa.me/919486639475" target="_blank" 
+       class="bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-xl hover:bg-green-600 transition whatsapp-btn"
+       title="Chat on WhatsApp">
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+       </svg>
+    </a>
+</div>
+
+    <script>
+        // Display selected files (for reference only - files won't be uploaded)
+        document.getElementById('designFiles').addEventListener('change', function(e) {
+            const fileList = document.getElementById('fileList');
+            fileList.innerHTML = '';
+            
+            if (this.files.length > 0) {
+                fileList.innerHTML = '<p class="font-medium text-gray-700">Files to send via WhatsApp:</p>';
+                
+                for (let i = 0; i < this.files.length; i++) {
+                    if (i >= 5) break; // Limit to 5 files
+                    fileList.innerHTML += `<div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-file-image mr-2 text-purple-500"></i>
+                        ${this.files[i].name} (${(this.files[i].size/1024/1024).toFixed(2)}MB)
+                    </div>`;
+                }
+                
+                if (this.files.length > 5) {
+                    fileList.innerHTML += `<p class="text-sm text-amber-600 mt-2">Only first 5 files will be considered</p>`;
+                }
+            }
+        });
+
+        function submitDesign() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const designType = document.getElementById('designType').value;
+            const description = document.getElementById('designDescription').value;
+            
+            // Basic validation
+            if (!name || !phone || !designType || !description) {
+                alert('Please fill all required fields marked with *');
+                return;
+            }
+
+            // Validate Indian phone number
+            const phoneRegex = /^[6-9]\d{9}$/;
+            if (!phoneRegex.test(phone)) {
+                alert('Please enter a valid 10-digit Indian phone number');
+                return;
+            }
+
+            // Format WhatsApp message
+            let message = `*Custom Design Submission*%0A%0A`;
+            message += `*Name:* ${encodeURIComponent(name)}%0A`;
+            message += `*Phone:* ${encodeURIComponent(phone)}%0A`;
+            message += `*Garment Type:* ${encodeURIComponent(designType)}%0A%0A`;
+            message += `*Design Description:*%0A${encodeURIComponent(description)}%0A%0A`;
+            message += `_Please send your design images in this WhatsApp chat_`;
+            
+            // Open WhatsApp with pre-filled message
+            window.open(`https://wa.me/919486639475?text=${message}`, '_blank');
+        }
+    </script>
+
+</body>
+
+
+
+  <!-- Footer -->
+<section class="bg-gradient-to-r from-purple-900 to-purple-700 text-white py-16">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Style?</h2>
+    <p class="text-lg mb-8 opacity-90">Book an appointment with our master tailors today and experience bespoke tailoring at its finest</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="tel:+916381568585" class="bg-white text-purple-900 px-8 py-4 rounded-full font-medium hover:bg-gray-100 transition flex items-center justify-center gap-2 transform hover:scale-105 shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg>
+        Call Now
+      </a>
+      <a href="https://wa.me/919486639475" class="bg-green-500 hover:bg-green-600 px-8 py-4 rounded-full font-medium transition flex items-center justify-center gap-2 transform hover:scale-105 shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+        WhatsApp Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Brand Info -->
+      <div class="md:col-span-2">
+        <div class="flex items-center space-x-3 mb-6">
+          <img src="images/logo/logo.png" alt="New Queen Tailor Logo" class="h-16 w-auto">
+          <span class="text-2xl font-extrabold text-[#9D8140] tracking-wide">NEW QUEEN TAILOR</span>
+        </div>
+        <p class="text-gray-400 mb-6 text-lg">Crafting exceptional garments with precision and care since 1999. Your perfect fit is our passion.</p>
+        
+        <div class="flex space-x-5 mb-6">
+          <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-125">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="bg-gray-800 p-4 rounded-lg">
+          <h4 class="font-medium text-[#9D8140] mb-2">Business Hours</h4>
+          <p class="text-gray-400 text-sm">Monday - Saturday: 9:00 AM - 8:00 PM</p>
+          <p class="text-gray-400 text-sm">Sunday: 10:00 AM - 2:00 PM</p>
+        </div>
+      </div>
+      
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-xl font-semibold mb-6 text-[#9D8140] border-b border-[#9D8140] pb-2">Our Services</h3>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-gray-400 hover:text-white transition flex items-center gap-2 hover:translate-x-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+            Custom Tailoring
+          </a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition flex items-center gap-2 hover:translate-x-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+            Alterations
+          </a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition flex items-center gap-2 hover:translate-x-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+            Wedding Attire
+          </a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition flex items-center gap-2 hover:translate-x-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+            Fabric Selection
+          </a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition flex items-center gap-2 hover:translate-x-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+            Emergency Repairs
+          </a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-xl font-semibold mb-6 text-[#9D8140] border-b border-[#9D8140] pb-2">Contact Us</h3>
+        <address class="not-italic text-gray-400 mb-6">
+          <div class="flex items-start gap-3 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-1 text-[#9D8140]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <div>
+              11, Arasamara Street<br>
+              Sivanar Street, Tirupathur – 635601<br>
+              <em class="text-sm">(Opp. Kesavalu Reddy Complex)</em>
+            </div>
+          </div>
+          
+          <div class="flex items-center gap-3 mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#9D8140]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <a href="tel:+916381568585" class="hover:text-white transition">+91 6381568585</a>
+          </div>
+          
+          <div class="flex items-center gap-3 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#9D8140]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+            <a href="https://wa.me/919486639475" class="hover:text-white transition">+91 9486639475</a>
+          </div>
+        </address>
+        
+        <div class="bg-gray-800 p-4 rounded-lg">
+          <h4 class="font-medium text-[#9D8140] mb-2">Newsletter</h4>
+          <p class="text-gray-400 text-sm mb-3">Subscribe for style tips and exclusive offers</p>
+          <form class="flex">
+            <input type="email" placeholder="Your email" class="bg-gray-700 text-white px-3 py-2 rounded-l text-sm w-full focus:outline-none focus:ring-1 focus:ring-[#9D8140]">
+            <button type="submit" class="bg-[#9D8140] text-white px-3 py-2 rounded-r text-sm hover:bg-[#7a6532] transition">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p>© 2024 New Queen Tailor. All rights reserved.</p>
+        <div class="flex gap-4 mt-4 md:mt-0">
+          <a href="#" class="text-gray-500 hover:text-white transition text-sm">Privacy Policy</a>
+          <a href="#" class="text-gray-500 hover:text-white transition text-sm">Terms of Service</a>
+          <a href="#" class="text-gray-500 hover:text-white transition text-sm">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
