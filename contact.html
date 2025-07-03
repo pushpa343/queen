@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - New Queen Tailor</title>
+    <link rel="icon" type="image/png" href="images/logo/logo.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-6 py-4 shadow-md bg-white relative z-50">
+        <div class="flex items-center space-x-3">
+            <img src="images/logo/logo without bg.png" alt="New Queen Tailor Logo" class="h-20 w-auto" />
+            <span class="text-2xl font-extrabold text-[#9D8140] tracking-wide">NEW QUEEN TAILOR</span>
+        </div>
+
+        <ul class="hidden md:flex space-x-6 font-semibold text-sm text-purple-900">
+            <li><a href="women.html">WOMEN</a></li>
+            <li><a href="men.html">MEN</a></li>
+            <li><a href="embroidery.html">EMBROIDERY</a></li>
+            <li><a href="order-stitch.html">ORDER & STITCH</a></li>
+            <li><a href="premium.html">PREMIUM</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html" class="text-pink-600">CONTACT</a></li>
+        </ul>
+
+        <div class="flex items-center space-x-4 text-purple-900">
+            <a href="login.php" class="px-5 py-2 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-700 transition duration-200 shadow-md">
+                Sign In
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-green-600 to-teal-600 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-6">Contact Us</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Get in touch with us for consultations, appointments, or any questions about our tailoring services</p>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h2 class="text-3xl font-bold text-purple-900 mb-6">Send us a Message</h2>
+                    
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">First Name*</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Last Name*</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Email*</label>
+                                <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Phone Number*</label>
+                                <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Service Interested In</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                <option value="">Select a service</option>
+                                <option value="women">Women's Tailoring</option>
+                                <option value="men">Men's Tailoring</option>
+                                <option value="embroidery">Embroidery Services</option>
+                                <option value="order-stitch">Order & Stitch</option>
+                                <option value="premium">Premium Collection</option>
+                                <option value="consultation">General Consultation</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Message*</label>
+                            <textarea rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="Tell us about your requirements, preferred appointment time, or any questions you have..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-lg transition duration-300">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="space-y-8">
+                    <!-- Store Information -->
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-purple-900 mb-6">Visit Our Store</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-map-marker-alt text-2xl text-green-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Address</h4>
+                                    <p class="text-gray-600">
+                                        11, Arasamara Street,<br>
+                                        Sivanar Street, Tirupathur – 635601<br>
+                                        <em>(Opp. Kesavalu Reddy Complex)</em>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-phone text-2xl text-green-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Phone</h4>
+                                    <p class="text-gray-600">
+                                        <a href="tel:+916381568585" class="hover:text-green-600">+91 6381568585</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <i class="fab fa-whatsapp text-2xl text-green-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-lg">WhatsApp</h4>
+                                    <p class="text-gray-600">
+                                        <a href="https://wa.me/919486639475" class="hover:text-green-600">+91 9486639475</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-envelope text-2xl text-green-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Email</h4>
+                                    <p class="text-gray-600">
+                                        <a href="mailto:newqueentailorshop@gmail.com" class="hover:text-green-600">newqueentailorshop@gmail.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-purple-900 mb-6">Business Hours</h3>
+                        
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="font-medium">Monday - Saturday</span>
+                                <span class="text-gray-600">9:00 AM - 8:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-medium">Sunday</span>
+                                <span class="text-gray-600">10:00 AM - 2:00 PM</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-4 bg-green-50 rounded-lg">
+                            <p class="text-green-800 text-sm">
+                                <i class="fas fa-info-circle mr-2"></i>
+                                We recommend calling ahead to schedule appointments for consultations and fittings.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-purple-900 mb-6">Quick Actions</h3>
+                        
+                        <div class="space-y-4">
+                            <a href="tel:+916381568585" class="flex items-center p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition">
+                                <i class="fas fa-phone text-2xl text-blue-600 mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold">Call Now</h4>
+                                    <p class="text-sm text-gray-600">Speak directly with our team</p>
+                                </div>
+                            </a>
+
+                            <a href="https://wa.me/919486639475" class="flex items-center p-4 bg-green-50 rounded-lg hover:bg-green-100 transition">
+                                <i class="fab fa-whatsapp text-2xl text-green-600 mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold">WhatsApp Chat</h4>
+                                    <p class="text-sm text-gray-600">Quick responses via WhatsApp</p>
+                                </div>
+                            </a>
+
+                            <a href="https://maps.app.goo.gl/EmY3vthhU8qi8NhQ9" target="_blank" class="flex items-center p-4 bg-red-50 rounded-lg hover:bg-red-100 transition">
+                                <i class="fas fa-map-marker-alt text-2xl text-red-600 mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold">Get Directions</h4>
+                                    <p class="text-sm text-gray-600">Find us on Google Maps</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-purple-900 mb-12">Find Us on the Map</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <a href="https://maps.app.goo.gl/EmY3vthhU8qi8NhQ9" target="_blank" rel="noopener noreferrer" class="block">
+                    <img src="images/location.webp" alt="New Queen Tailor Location" class="w-full rounded-lg shadow-lg hover:shadow-xl transition">
+                </a>
+                <p class="text-center mt-4 text-gray-600">Click on the map to open in Google Maps</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-purple-900 mb-12">Frequently Asked Questions</h2>
+            
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-semibold mb-3">How do I book an appointment?</h3>
+                    <p class="text-gray-600">You can book an appointment by calling us at +91 6381568585, sending a WhatsApp message to +91 9486639475, or visiting our store directly. We recommend booking in advance for consultations.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-semibold mb-3">What is your typical turnaround time?</h3>
+                    <p class="text-gray-600">Most garments are ready within 7-10 business days. For complex designs or embroidery work, it may take 2-3 weeks. We also offer express services for urgent requirements.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-semibold mb-3">Do you offer home visits?</h3>
+                    <p class="text-gray-600">Yes, we provide home consultation and measurement services for premium customers. Please contact us to schedule a home visit.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-semibold mb-3">What payment methods do you accept?</h3>
+                    <p class="text-gray-600">We accept cash, UPI payments, bank transfers, and all major credit/debit cards. Advance payment is required for custom orders.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-semibold mb-3">Do you provide alterations?</h3>
+                    <p class="text-gray-600">Yes, we offer alteration services for garments purchased from us. We also provide alterations for garments from other stores at competitive rates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-green-600 to-teal-600 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Get Started?</h2>
+            <p class="text-xl mb-8">Contact us today to discuss your tailoring needs</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="tel:+916381568585" class="bg-white text-green-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+                    <i class="fas fa-phone mr-2"></i>Call Now
+                </a>
+                <a href="https://wa.me/919486639475" class="bg-green-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-400 transition">
+                    <i class="fab fa-whatsapp mr-2"></i>WhatsApp Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4">
+                <img src="images/logo/logo.png" alt="New Queen Tailor Logo" class="h-12 w-auto">
+                <span class="text-xl font-bold text-[#9D8140]">NEW QUEEN TAILOR</span>
+            </div>
+            <p class="text-gray-400 mb-4">Crafting exceptional garments with precision and care since 1999</p>
+            <p class="text-gray-500">© 2024 New Queen Tailor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/919486639475" target="_blank" 
+           class="bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-xl hover:bg-green-600 transition"
+           title="Chat on WhatsApp">
+           <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+</body>
+</html>

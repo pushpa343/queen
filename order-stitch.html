@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order & Stitch - New Queen Tailor</title>
+    <link rel="icon" type="image/png" href="images/logo/logo.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-6 py-4 shadow-md bg-white relative z-50">
+        <div class="flex items-center space-x-3">
+            <img src="images/logo/logo without bg.png" alt="New Queen Tailor Logo" class="h-20 w-auto" />
+            <span class="text-2xl font-extrabold text-[#9D8140] tracking-wide">NEW QUEEN TAILOR</span>
+        </div>
+
+        <ul class="hidden md:flex space-x-6 font-semibold text-sm text-purple-900">
+            <li><a href="women.html">WOMEN</a></li>
+            <li><a href="men.html">MEN</a></li>
+            <li><a href="embroidery.html">EMBROIDERY</a></li>
+            <li><a href="order-stitch.html" class="text-pink-600">ORDER & STITCH</a></li>
+            <li><a href="premium.html">PREMIUM</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+
+        <div class="flex items-center space-x-4 text-purple-900">
+            <a href="login.php" class="px-5 py-2 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-700 transition duration-200 shadow-md">
+                Sign In
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-6">Order & Stitch Service</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Shop from any website, send us the design, and we'll stitch it perfectly for you. Your style, our craftsmanship!</p>
+            <a href="#how-it-works" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105">
+                How It Works
+            </a>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-purple-900 mb-12">How Order & Stitch Works</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
+                <div class="text-center">
+                    <div class="bg-blue-600 text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
+                    <h3 class="text-xl font-semibold mb-3">Browse & Select</h3>
+                    <p class="text-gray-600">Find your favorite design on any shopping website</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-600 text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
+                    <h3 class="text-xl font-semibold mb-3">Share with Us</h3>
+                    <p class="text-gray-600">Send us the product link or images via WhatsApp</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-600 text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
+                    <h3 class="text-xl font-semibold mb-3">Get Quote</h3>
+                    <p class="text-gray-600">Receive pricing and timeline within 24 hours</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-600 text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">4</div>
+                    <h3 class="text-xl font-semibold mb-3">We Stitch</h3>
+                    <p class="text-gray-600">Our experts recreate the design perfectly for you</p>
+                </div>
+            </div>
+
+            <!-- Order Form -->
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-3xl font-bold text-center text-purple-900 mb-8">Submit Your Order</h3>
+                
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Your Name*</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Phone Number*</label>
+                            <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Product Link or Description*</label>
+                        <textarea rows="3" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Paste the product link or describe the design you want"></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Garment Type*</label>
+                            <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">Select Type</option>
+                                <option value="blouse">Blouse</option>
+                                <option value="kurti">Kurti</option>
+                                <option value="dress">Dress</option>
+                                <option value="lehenga">Lehenga</option>
+                                <option value="saree">Saree</option>
+                                <option value="shirt">Shirt</option>
+                                <option value="kurta">Kurta</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Preferred Fabric</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">Select Fabric</option>
+                                <option value="cotton">Cotton</option>
+                                <option value="silk">Silk</option>
+                                <option value="georgette">Georgette</option>
+                                <option value="chiffon">Chiffon</option>
+                                <option value="crepe">Crepe</option>
+                                <option value="linen">Linen</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Special Requirements</label>
+                        <textarea rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Any specific requirements, modifications, or preferences"></textarea>
+                    </div>
+
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4">
+                        <p class="text-blue-800 font-medium flex items-center">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            Important: Please send product images via WhatsApp after submitting this form
+                        </p>
+                        <p class="text-blue-700 text-sm mt-1">WhatsApp: +91 9486639475</p>
+                    </div>
+
+                    <button type="button" onclick="submitOrder()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-lg transition duration-300 flex items-center justify-center">
+                        <i class="fab fa-whatsapp text-2xl mr-3"></i>
+                        Submit Order & Continue to WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Categories -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-purple-900 mb-12">Popular Categories</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition">
+                    <i class="fas fa-tshirt text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="font-semibold">Casual Wear</h3>
+                    <p class="text-sm text-gray-600 mt-2">T-shirts, Kurtis, Casual Dresses</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition">
+                    <i class="fas fa-user-tie text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="font-semibold">Formal Wear</h3>
+                    <p class="text-sm text-gray-600 mt-2">Shirts, Blazers, Formal Dresses</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition">
+                    <i class="fas fa-ring text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="font-semibold">Wedding Wear</h3>
+                    <p class="text-sm text-gray-600 mt-2">Lehengas, Sherwanis, Sarees</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition">
+                    <i class="fas fa-cocktail text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="font-semibold">Party Wear</h3>
+                    <p class="text-sm text-gray-600 mt-2">Gowns, Indo-Western, Suits</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Guide -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-purple-900 mb-12">Pricing Guide</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-600">
+                    <h3 class="text-2xl font-bold text-center mb-6">Basic</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold text-blue-600">₹800</span>
+                        <span class="text-gray-600"> - ₹2,500</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Simple designs</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Basic fabrics</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Standard fitting</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>7-10 days delivery</li>
+                    </ul>
+                    <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+                        Get Quote
+                    </button>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-purple-600 transform scale-105">
+                    <h3 class="text-2xl font-bold text-center mb-6">Premium</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold text-purple-600">₹2,500</span>
+                        <span class="text-gray-600"> - ₹8,000</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Complex designs</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Premium fabrics</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Perfect fitting</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>5-7 days delivery</li>
+                    </ul>
+                    <button class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition">
+                        Get Quote
+                    </button>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-center mb-6">Luxury</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold text-amber-600">₹8,000</span>
+                        <span class="text-gray-600">+</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Designer pieces</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Luxury fabrics</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Bespoke fitting</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>3-5 days delivery</li>
+                    </ul>
+                    <button class="w-full bg-amber-600 text-white py-3 rounded-lg hover:bg-amber-700 transition">
+                        Get Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Get Started?</h2>
+            <p class="text-xl mb-8">Send us your design and let us create magic for you</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="tel:+916381568585" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+                    <i class="fas fa-phone mr-2"></i>Call Now
+                </a>
+                <a href="https://wa.me/919486639475" class="bg-green-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-600 transition">
+                    <i class="fab fa-whatsapp mr-2"></i>WhatsApp Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4">
+                <img src="images/logo/logo.png" alt="New Queen Tailor Logo" class="h-12 w-auto">
+                <span class="text-xl font-bold text-[#9D8140]">NEW QUEEN TAILOR</span>
+            </div>
+            <p class="text-gray-400 mb-4">Crafting exceptional garments with precision and care since 1999</p>
+            <p class="text-gray-500">© 2024 New Queen Tailor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function submitOrder() {
+            // Get form data
+            const name = document.querySelector('input[type="text"]').value;
+            const phone = document.querySelector('input[type="tel"]').value;
+            const productLink = document.querySelector('textarea').value;
+            const garmentType = document.querySelector('select').value;
+            
+            if (!name || !phone || !productLink || !garmentType) {
+                alert('Please fill all required fields');
+                return;
+            }
+
+            // Create WhatsApp message
+            let message = `*Order & Stitch Request*%0A%0A`;
+            message += `*Name:* ${encodeURIComponent(name)}%0A`;
+            message += `*Phone:* ${encodeURIComponent(phone)}%0A`;
+            message += `*Garment Type:* ${encodeURIComponent(garmentType)}%0A`;
+            message += `*Product Link/Description:* ${encodeURIComponent(productLink)}%0A%0A`;
+            message += `_Please send product images in this chat_`;
+            
+            // Open WhatsApp
+            window.open(`https://wa.me/919486639475?text=${message}`, '_blank');
+        }
+    </script>
+</body>
+</html>
